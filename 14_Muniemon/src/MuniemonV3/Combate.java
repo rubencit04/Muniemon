@@ -1,9 +1,7 @@
-package negocio;
+package MuniemonV3;
 
 import java.util.Random;
 import java.util.Scanner;
-
-import entidad.Muniemon;
 
 public class Combate {
 	private Muniemon m1;

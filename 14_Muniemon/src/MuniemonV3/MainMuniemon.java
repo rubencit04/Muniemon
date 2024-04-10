@@ -1,11 +1,8 @@
-package main;
+package MuniemonV3;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import entidad.Muniemon;
-import entidad.TipoMuniemon;
-import negocio.Combate;
 
 public class MainMuniemon {
 	
@@ -13,7 +10,6 @@ public class MainMuniemon {
 	private static ArrayList<Muniemon> listaMuniemons;
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("Bienvenidos al MUNIEMON");
 		System.out.println("-----------------------");
 		System.out.println("");
@@ -66,7 +62,7 @@ public class MainMuniemon {
 			int defensa = recogerEntero();
 			System.out.println("Introduzca la velocidad");
 			int velocidad = recogerEntero();
-			TipoMuniemon tipo = escogerTipoMuniemon();
+			Tipo tipo = escogerTipoMuniemon();
 			Muniemon m = new Muniemon(nombre, vida, ataque, defensa, tipo, velocidad);
 			listaMuniemons.add(m);
 			System.out.println("Muniemon creado :)");
@@ -76,14 +72,14 @@ public class MainMuniemon {
 		
 	}
 
-	private static TipoMuniemon escogerTipoMuniemon() {
+	private static Tipo escogerTipoMuniemon() {
 		System.out.println("Escoja el tipo de muniemon");
 		int contador = 0;
-		for(TipoMuniemon tm : TipoMuniemon.values()) {
+		for(Tipo tm : Tipo.values()) {
 			System.out.println(contador++ +"-" + tm);
 		}
 		int opcion = recogerEntero();
-		TipoMuniemon tm = TipoMuniemon.values()[opcion];
+		Tipo tm = Tipo.values()[opcion];
 		return tm;
 	}
 

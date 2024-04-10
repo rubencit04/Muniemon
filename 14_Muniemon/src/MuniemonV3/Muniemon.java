@@ -1,15 +1,15 @@
-package entidad;
+package MuniemonV3;
 
 public class Muniemon {
 	private String nombre;
 	private int vida;
 	private int ataque;
 	private int defensa;
-	private TipoMuniemon tipo;
+	private Tipo tipo;
 	private int velocidad;
 	private final double PORCENTAJE_INCREMENTO_DAÑO = 0.5;
 		
-	public Muniemon(String nombre, int vida, int ataque, int defensa, TipoMuniemon tipo, int velocidad) {
+	public Muniemon(String nombre, int vida, int ataque, int defensa, Tipo tipo, int velocidad) {
 		super();
 		this.nombre = nombre;
 		this.vida = vida;
@@ -43,10 +43,10 @@ public class Muniemon {
 	public void setDefensa(int defensa) {
 		this.defensa = defensa;
 	}
-	public TipoMuniemon getTipo() {
+	public Tipo  getTipo() {
 		return tipo;
 	}
-	public void setTipo(TipoMuniemon tipo) {
+	public void setTipo(Tipo tipo) {
 		this.tipo = tipo;
 	}
 	public int getVelocidad() {
@@ -108,17 +108,17 @@ public class Muniemon {
 		
 		switch (this.tipo) {
 		case AGUA:
-			if(m.tipo == TipoMuniemon.FUEGO) {
+			if(m.tipo == Tipo.FUEGO) {
 				danio += danio*PORCENTAJE_INCREMENTO_DAÑO;
 			}
 			break;
 		case FUEGO:
-			if(m.tipo == TipoMuniemon.PLANTA) {
+			if(m.tipo == Tipo.PLANTA) {
 				danio += danio*PORCENTAJE_INCREMENTO_DAÑO;
 			}
 			break;
 		case PLANTA:
-			if(m.tipo == TipoMuniemon.AGUA) {
+			if(m.tipo == Tipo.AGUA) {
 				danio += danio*PORCENTAJE_INCREMENTO_DAÑO;
 			}
 			break;
